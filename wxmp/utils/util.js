@@ -17,6 +17,22 @@ function formatDate (date) {
   return (d.getMonth() + 1) + '月' + d.getDate() + '日 星期' + day[d.getDay()]
 }
 
+/**
+ * 时间戳格式化
+ * 1530692082 -> '07-04 16:14'
+ * @param { Number } time 时间戳
+ * @return { String } 格式化后的时间字符串
+ */
+function formatTime (time) {
+  let d = new Date(time * 1000)
+  let month = (d.getMonth() + 1) < 10 ? '0' + (d.getMonth() + 1) : (d.getMonth() + 1)
+  let date = d.getDate() < 10 ? '0' + d.getDate() : d.getDate()
+  let hour = d.getHours() < 10 ? '0' + d.getHours() : d.getHours()
+  let min = d.getMinutes() < 10 ? '0' + d.getMinutes() : d.getMinutes()
+  return month + '-' + date + ' ' + hour + ':' + min
+}
+
 module.exports = {
-  formatDate: formatDate
+  formatDate: formatDate,
+  formatTime: formatTime
 }
