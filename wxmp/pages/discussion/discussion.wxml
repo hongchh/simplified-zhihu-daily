@@ -1,4 +1,5 @@
 <view id="discussion-page">
+  <!-- 长评 -->
   <text id="long-comments-bar">{{ longComments.length }}条长评</text>
   <view class="comments" wx:for="{{ longComments }}" wx:key="{{ index }}">
     <view class="info">
@@ -9,9 +10,8 @@
     <text class="content">{{ item.content }}</text>
     <text class="time">{{ item.time }}</text>
   </view>
-  <view id="short-comments-bar">
-    <text>{{ shortComments.length }}条短评</text>
-  </view>
+  <!-- 短评 -->
+  <text id="short-comments-bar">{{ shortComments.length }}条短评</text>
   <view class="comments" wx:for="{{ shortComments }}" wx:key="{{ index }}">
     <view class="info">
       <image class="avatar" src="{{ item.avatar }}" />
